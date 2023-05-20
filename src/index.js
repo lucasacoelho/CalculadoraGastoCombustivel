@@ -19,14 +19,22 @@
 })()
 
 function calculo(){
-  var distancia = document.getElementById('distancia').value
-  var vm = document.getElementById('Vm').value
-  var auto = document.getElementById('autonomia').value
-  var pm = document.getElementById('Pm').value
-  var quantos_pd = document.getElementById('quantos-pd').value
-  var botoesped = document.getElementsByName('pedagio')
-  var botoesidavolt = document.getElementsByName('idaVolta')
-  
+	var distancia = document.getElementById('distancia').value
+	var vm = document.getElementById('Vm').value
+	var auto = document.getElementById('autonomia').value
+	var pm = document.getElementById('Pm').value
+	var quantos_pd = document.getElementById('quantos-pd').value
+	var botoesped = document.getElementsByName('pedagio')
+	var botoesidavolt = document.getElementsByName('idaVolta')
+	var dist = document.getElementById('Dist')
+	var vmResult = document.getElementById('VelocidadeMedia')
+	var autoResult = document.getElementById('autonResult')
+	var pmResult = document.getElementById('precogasolina')
+	var quantos_pResult = document.getElementById('quantiaPedagio')
+	var tempoResult = document.getElementById('valorPedagio')
+	var idavolta = document.getElementById('idavolta')
+	var TotalResult = document.getElementById('Total')
+
   if ((distancia == "") || (auto == "") || (vm == "") || (distancia <= 0) || (auto <= 0) || (vm <= 0)) {
     alert("Insira algum valor maior que 0")
   }
@@ -55,10 +63,31 @@ function calculo(){
 
 			if (tempo < 1){
 			tempo = tempo * 60
+
+			dist.innerHTML = distancia + " Km"
+			vmResult.innerHTML = vm + " Km/h"
+			autoResult.innerHTML = auto + " Km/l"
+			pmResult.innerHTML = "R$ " + pm 
+			quantos_pResult.innerHTML = quantos_pd
+			tempoResult.innerHTML = tempo + " minuto(s)"
+			idavolta.innerHTML = "Sim"
+			TotalResult.innerHTML = final
+
 			console.log("Velocidade Media de: " + vm +"Km/h"+"\n tempo de viagem foi de " + tempo + " minuto(s)" + 
 			"\n Vai dar R$"+ total + " de gasolina" + "\n O total da viagem vai ser R$" + final)
 			}
 			else{
+
+				dist.innerHTML = distancia + " Km"
+				vmResult.innerHTML = vm + " Km/h"
+				autoResult.innerHTML = auto + " Km/l"
+				pmResult.innerHTML = "R$ " + pm 
+				quantos_pResult.innerHTML = quantos_pd
+				tempoResult.innerHTML = tempo + " Hora(s)"
+				idavolta.innerHTML = "Sim"
+				TotalResult.innerHTML = final
+
+
 			console.log("Velocidade Media de: " + vm +"Km/h"+"\n tempo de viagem foi de " + tempo + " Hora(s)" + 
 			"\n Vai dar R$"+ total + " de gasolina" + "\n O total da viagem vai ser R$" + final)
 
@@ -74,10 +103,30 @@ function calculo(){
 			var final = total + ped
 			if (tempo < 1){
 				tempo = tempo * 60
+
+				dist.innerHTML = distancia + " Km"
+				vmResult.innerHTML = vm + " Km/h"
+				autoResult.innerHTML = auto + " Km/l"
+				pmResult.innerHTML = "R$ " + pm 
+				quantos_pResult.innerHTML = quantos_pd
+				tempoResult.innerHTML = tempo + " minuto(s)"
+				idavolta.innerHTML = "Não"
+				TotalResult.innerHTML = final
+
 				console.log("Velocidade Media de: " + vm +"Km/h"+"\n tempo de viagem foi de " + tempo + " minuto(s)" + 
 				"\n Vai dar R$"+ total + " de gasolina" + "\n O total da viagem vai ser R$" + final)
 			}
 			else{
+
+				dist.innerHTML = distancia + " Km"
+				vmResult.innerHTML = vm + " Km/h"
+				autoResult.innerHTML = auto + " Km/l"
+				pmResult.innerHTML = "R$ " + pm 
+				quantos_pResult.innerHTML = quantos_pd
+				tempoResult.innerHTML = tempo + " Hora(s)"
+				idavolta.innerHTML = "Não"
+				TotalResult.innerHTML = final
+
 				console.log("Velocidade Media de: " + vm +"Km/h"+"\n tempo de viagem foi de " + tempo + " Hora(s)" + 
 				"\n Vai dar R$"+ total + " de gasolina" + "\n O total da viagem vai ser R$" + final)
 				}
@@ -99,11 +148,31 @@ function calculo(){
 			tempo = tempo * 2
 
 			if (tempo < 1){
-			tempo = tempo * 60
+				tempo = tempo * 60
+
+				dist.innerHTML = distancia + " Km"
+				vmResult.innerHTML = vm + " Km/h"
+				autoResult.innerHTML = auto + " Km/l"
+				pmResult.innerHTML = "R$ " + pm 
+				quantos_pResult.innerHTML = quantos_pd
+				tempoResult.innerHTML = tempo + " minuto(s)"
+				idavolta.innerHTML = "sim"
+				TotalResult.innerHTML = total
+
 			console.log("Velocidade Media de: " + vm +"Km/h"+"\n tempo de viagem foi de " + tempo + " minuto(s)" + 
 			"\n Vai dar R$"+ total + " de gasolina")
 			}
 			else{
+
+				dist.innerHTML = distancia + " Km"
+				vmResult.innerHTML = vm + " Km/h"
+				autoResult.innerHTML = auto + " Km/l"
+				pmResult.innerHTML = "R$ " + pm 
+				quantos_pResult.innerHTML = quantos_pd
+				tempoResult.innerHTML = tempo + " Hora(s)"
+				idavolta.innerHTML = "Sim"
+				TotalResult.innerHTML = total
+
 			console.log("Velocidade Media de: " + vm +"Km/h"+"\n tempo de viagem foi de " + tempo + " Hora(s)" + 
 			"\n Vai dar R$"+ total + " de gasolina")
 
@@ -118,10 +187,30 @@ function calculo(){
 			var total = consumo * pm
 			if (tempo < 1){
 				tempo = tempo * 60
+
+				dist.innerHTML = distancia + " Km"
+				vmResult.innerHTML = vm + " Km/h"
+				autoResult.innerHTML = auto + " Km/l"
+				pmResult.innerHTML = "R$ " + pm 
+				quantos_pResult.innerHTML = quantos_pd
+				tempoResult.innerHTML = tempo + " minuto(s)"
+				idavolta.innerHTML = "Não"
+				TotalResult.innerHTML = total
+
 				console.log("Velocidade Media de: " + vm +"Km/h"+"\n tempo de viagem foi de " + tempo + " minuto(s)" + 
 				"\n Vai dar R$"+ total + " de gasolina")
 			}
 			else{
+
+				dist.innerHTML = distancia + " Km"
+				vmResult.innerHTML = vm + " Km/h"
+				autoResult.innerHTML = auto + " Km/l"
+				pmResult.innerHTML = "R$ " + pm 
+				quantos_pResult.innerHTML = quantos_pd
+				tempoResult.innerHTML = tempo + " Hora(s)"
+				idavolta.innerHTML = "Não"
+				TotalResult.innerHTML = total
+
 				console.log("Velocidade Media de: " + vm +"Km/h"+"\n tempo de viagem foi de " + tempo + " Hora(s)" + 
 				"\n Vai dar R$"+ total + " de gasolina")
 				}
